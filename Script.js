@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const msg = new SpeechSynthesisUtterance("Welcome to PIE.space");
+    const msg = new SpeechSynthesisUtterance("Welcome to pie space");
     window.speechSynthesis.speak(msg);
 
     const links = document.querySelectorAll('a');
@@ -24,6 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
             }
-        }, 30); // Adjust the speed of the loading bar
+        }, 10); // Adjust the speed of the loading bar
     }, 300); // Duration of the hacking screen
 });
