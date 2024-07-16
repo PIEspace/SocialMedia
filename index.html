@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Social Media</title>
+    <title>Welcome to PIE.space</title>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
@@ -22,10 +22,22 @@
         <div id="loading-percent" class="loading-percent">0%</div>
     </div>
     <div id="main-content" class="container" style="display: none;">
+        <h1>Welcome to PIE.space</h1>
         <!-- Add your logo here -->
         <img src="MainLogo.png" alt="My Logo" class="logo">
-        <h1>Follow Me on Social Media</h1>
-        <ul>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../Images/slide1.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/slide2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/slide3.jpg" style="width:100%">
+            </div>
+        </div>
+        <h2>Follow Me on Social Media</h2>
+        <ul id="social-media-list">
             <li>
                 <a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">
                     <img src="instagram.jpg" alt="Instagram Logo">
@@ -46,6 +58,11 @@
             </li>
             <!-- Add more social media links here -->
         </ul>
+        <div>
+            <input type="text" id="search-box" placeholder="Search social media accounts...">
+        </div>
+        <h2>Current Time in India:</h2>
+        <div id="indian-clock" class="clock"></div>
     </div>
     <script src="Script.js"></script>
 </body>
