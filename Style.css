@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    flex-direction: column;
 }
 
 .hacking-screen {
@@ -69,7 +70,7 @@ body {
     margin-bottom: 20px;
 }
 
-h1 {
+h1, h2 {
     color: #333;
     margin-bottom: 20px;
 }
@@ -109,4 +110,38 @@ a:hover {
     to {
         width: 100%;
     }
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+#search-box {
+    padding: 10px;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.clock {
+    font-size: 24px;
+    font-weight: bold;
 }
