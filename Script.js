@@ -23,7 +23,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(loadingInterval);
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
+                startClock();
+                showSlides();
             }
-        }, 10); // Adjust the speed of the loading bar
+        }, 30); // Adjust the speed of the loading bar
     }, 300); // Duration of the hacking screen
+});
+
+function startClock() {
+    const indianClock = document.getElementById('indian-clock');
+    setInterval(() => {
+        const now = new Date();
+        const indiaTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+        indianClock.textContent = indiaTime.toLocaleTimeString();
+    }, 1000);
+}
+
+let slideIndex = 0;
+function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+document.getElementById('search-box').addEventListener('input', function() {
+    const filter = this.value.toLowerCase();
+    const ul = document.getElementById('social-media-list');
+    const li = ul.getElementsByTagName('li');
+    for (let i = 0; i < li.length; i++) {
+        const a = li[i].getElementsByTagName('a')[0];
+        const txtValue = a.textContent || a.innerText;
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 });
