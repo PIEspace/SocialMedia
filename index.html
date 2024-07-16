@@ -4,104 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Social Media</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background: white;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-        }
-
-        a img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS File/Style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Add your logo here -->
-        <img src="logo.png" alt="My Logo" class="logo">
         <h1>Follow Me on Social Media</h1>
         <ul>
-            <li>
-                <a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-                    Instagram
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/@PROJECTOCCUPYMARS" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
-                    YouTube
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/profile.php?id=100052831652668&mibextid=ZbWKwL" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
-                    Facebook
-                </a>
-            </li>
-            <!-- Add more social media links here -->
+            <li><a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@PROJECTOCCUPYMARS" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100052831652668&mibextid=ZbWKwL" target="_blank">Facebook</a></li>
         </ul>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const msg = new SpeechSynthesisUtterance("Welcome to PIE.space");
-            window.speechSynthesis.speak(msg);
-
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    alert(`You are now leaving to visit ${event.target.textContent}`);
-                });
-            });
-        });
-    </script>
+    <script src="../JAVA SCRIPT File/Script.js"></script>
 </body>
 </html>
