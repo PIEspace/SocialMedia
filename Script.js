@@ -35,8 +35,7 @@ function startClock() {
     setInterval(() => {
         const now = new Date();
         const indiaTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
-        const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
-        indianClock.textContent = indiaTime.toLocaleTimeString('en-US', options);
+        indianClock.textContent = indiaTime.toLocaleTimeString();
     }, 1000);
 }
 
