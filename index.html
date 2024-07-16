@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="container">
+    <div id="hacking-screen" class="hacking-screen">
+        <pre id="hacking-text">
+            Initializing...
+            Connecting to server...
+            Access granted!
+            Welcome to PIE.space
+        </pre>
+    </div>
+    <div id="loading-screen" class="loading-screen" style="display: none;">
+        <div class="loading-bar">
+            <div id="loading-progress" class="loading-progress"></div>
+        </div>
+        <div id="loading-percent" class="loading-percent">0%</div>
+    </div>
+    <div id="main-content" class="container" style="display: none;">
         <!-- Add your logo here -->
         <img src="MainLogo.png" alt="My Logo" class="logo">
         <h1>Follow Me on Social Media</h1>
@@ -33,6 +47,6 @@
             <!-- Add more social media links here -->
         </ul>
     </div>
-    <script src="Script.js"></script>
+    <script src="Style.js"></script>
 </body>
 </html>
