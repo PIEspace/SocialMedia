@@ -22,52 +22,47 @@
         <div id="loading-percent" class="loading-percent">0%</div>
     </div>
     <div id="main-content" class="container" style="display: none;">
-        <header>
-            <img src="MainLogo.png" alt="My Logo" class="logo">
-            <h1>Welcome to PIE.space</h1>
-        </header>
-        <nav>
+        <h1>Welcome to PIE.space</h1>
+        <!-- Add your logo here -->
+        <img src="MainLogo.png" alt="My Logo" class="logo">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../Images/slide1.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/slide2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/slide3.jpg" style="width:100%">
+            </div>
+        </div>
+        <h2>Follow Me on Social Media</h2>
+        <ul id="social-media-list">
+            <li>
+                <a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">
+                    <img src="instagram.jpg" alt="Instagram Logo">
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@PROJECTOCCUPYMARS" target="_blank">
+                    <img src="youtube.jpg" alt="YouTube Logo">
+                    YouTube
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100052831652668&mibextid=ZbWKwL" target="_blank">
+                    <img src="facebook.jpg" alt="Facebook Logo">
+                    Facebook
+                </a>
+            </li>
+            <!-- Add more social media links here -->
+        </ul>
+        <div>
             <input type="text" id="search-box" placeholder="Search social media accounts...">
-        </nav>
-        <section class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="instagram.jpg" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="YouTube.jpg" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="FaceBook.jpg" style="width:100%">
-            </div>
-        </section>
-        <section>
-            <h2>Follow Me on Social Media</h2>
-            <ul id="social-media-list">
-                <li>
-                    <a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">
-                        <img src="instagram.jpg" alt="Instagram Logo">
-                        Instagram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/@PROJECTOCCUPYMARS" target="_blank">
-                        <img src="YouTube.jpg" alt="YouTube Logo">
-                        YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=100052831652668&mibextid=ZbWKwL" target="_blank">
-                        <img src="FaceBook.jpg" alt="Facebook Logo">
-                        Facebook
-                    </a>
-                </li>
-                <!-- Add more social media links here -->
-            </ul>
-        </section>
-        <section>
-            <h2>Current Time in India:</h2>
-            <div id="indian-clock" class="clock"></div>
-        </section>
+        </div>
+        <h2>Current Time in India:</h2>
+        <div id="indian-clock" class="clock"></div>
     </div>
     <script src="Script.js"></script>
 </body>
