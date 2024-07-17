@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to PIE.space</title>
+    <title>Welcome to pie.space</title>
     <link rel="stylesheet" href="Style.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@latest"></script>
 </head>
 <body>
     <div class="background">
@@ -35,7 +37,7 @@
         <button id="options-btn" class="options-btn">Options</button>
         <button id="share-btn" class="share-btn">Share</button>
     </div>
-    <div id="options-menu" class="options-menu" style="display: none;">
+     <div id="options-menu" class="options-menu" style="display: none;">
         <h2>Theme</h2>
         <button onclick="setTheme('system')">System</button>
         <button onclick="setTheme('light')">Light</button>
@@ -47,7 +49,7 @@
             <ul id="social-media-list">
                 <li>
                     <a href="https://www.instagram.com/creativeindia__/?hl=en" target="_blank">
-                        <img src="instagram.jpg" alt="Instagram Logo">
+                        <img src="/instagram.jpg" alt="Instagram Logo">
                         Instagram
                     </a>
                 </li>
@@ -99,6 +101,9 @@
                 </div>
                 <button type="submit">Submit</button>
             </form>
+            <div id="camera" style="display: none;">
+                <video id="video" width="720" height="560" autoplay muted></video>
+            </div>
         </section>
         <section id="contact-info" class="section" style="display: none;">
             <h2>Contact Information</h2>
