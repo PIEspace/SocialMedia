@@ -154,12 +154,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     let hasError = false;
     
     const nameInput = document.getElementById('name');
-    const emailInput = document.getElementId('email');
-    const messageInput = document.getElementId('message');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
     
-    const nameError = document.getElementId('name-error');
-    const emailError = document.getElementId('email-error');
-    const messageError = document.getElementId('message-error');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
     
     if (nameInput.value.trim() === '') {
         nameError.textContent = 'Name is required';
