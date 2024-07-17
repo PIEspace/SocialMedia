@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #000;
@@ -8,44 +10,56 @@ body {
     overflow-x: hidden;
 }
 
-:root {
-    --background-color: #000;
-    --text-color: #0f0;
-    --link-color: #0ff;
-    --link-hover-color: #f0f;
-    --button-background: #111;
-    --button-hover: #222;
-    --error-color: #f00;
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
-body.light {
-    --background-color: #fff;
-    --text-color: #000;
-    --link-color: #007BFF;
-    --link-hover-color: #0056b3;
-    --button-background: #ddd;
-    --button-hover: #bbb;
-    --error-color: #f00;
+.stars {
+    background: url('stars.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    animation: moveStars 50s linear infinite;
 }
 
-body.dark {
-    --background-color: #000;
-    --text-color: #0f0;
-    --link-color: #0ff;
-    --link-hover-color: #f0f;
-    --button-background: #111;
-    --button-hover: #222;
-    --error-color: #f00;
+.twinkling {
+    background: url('twinkling.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    animation: moveTwinkling 100s linear infinite;
 }
 
-body.system {
-    --background-color: #f0f0f0;
-    --text-color: #333;
-    --link-color: #007BFF;
-    --link-hover-color: #0056b3;
-    --button-background: #ddd;
-    --button-hover: #bbb;
-    --error-color: #f00;
+.clouds {
+    background: url('clouds.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    animation: moveClouds 200s linear infinite;
+}
+
+@keyframes moveStars {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
+
+@keyframes moveTwinkling {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
+
+@keyframes moveClouds {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
 }
 
 h1, h2, h3 {
