@@ -430,6 +430,17 @@ a:hover {
     margin-top: 20px;
 }
 
+#camera {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#video {
+    border: 2px solid var(--link-color);
+    border-radius: 10px;
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
