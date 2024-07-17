@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('loading-screen').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
                 startClock();
+                initFaceDetection();
             }
         }, 30); // Adjust the speed of the loading bar
     }, 300); // Duration of the hacking screen
@@ -137,10 +138,6 @@ function animateHeading() {
     type();
 }
 
-function openRocketSimulator() {
-    alert("To run the rocket simulator, please download and execute the provided Python script on your local machine.");
-}
-
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 8,
@@ -200,10 +197,50 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         document.getElementById('contact-info').style.display = 'block';
         alert('Form submitted successfully!');
         // Add your form submission code here
+        sendEmail(nameInput.value.trim(), emailInput.value.trim(), document.getElementById('phone').value.trim(), messageInput.value.trim());
     }
 });
 
 function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(email);
+}
+
+function sendEmail(name, email, phone, message) {
+    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+    fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify({name, email, phone, message}),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message));
+}
+
+async function initFaceDetection() {
+    await faceapi.nets.tinyFaceDetector.loadFromUri('/models');
+    await faceapi.nets.faceLandmark68Net.loadFromUri('/models');
+    await faceapi.nets.faceRecognitionNet.loadFromUri('/models');
+    await faceapi.nets.faceExpressionNet.loadFromUri('/models');
+    await faceapi.nets.ageGenderNet.loadFromUri('/models');
+
+    const video = document.getElementById('video');
+    startVideo(video);
+
+    video.addEventListener('play', () => {
+        const displaySize = { width: video.width, height: video.height };
+        faceapi.matchDimensions(video, displaySize);
+        setInterval(async () => {
+            const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions().withAgeAndGender();
+            console.log(detections);
+        }, 100);
+    });
+}
+
+function startVideo(video) {
+    navigator.getUserMedia(
+        { video: {} },
+        stream => video.srcObject = stream,
+        err => console.error(err)
+    );
 }
